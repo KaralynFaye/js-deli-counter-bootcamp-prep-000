@@ -7,7 +7,7 @@ function takeANumber(line, name) {
 
 function nowServing(line) {
   if (line.length > 0) {
-    return line.pop();
+    return `Currently serving ${line.shift()}.`;
   }
   
   else {
@@ -18,9 +18,10 @@ function nowServing(line) {
 function currentLine(line) {
   if (line.length > 0){
     var list = 'The line is currently:'
-    for (var i = 0; i < line.length; i++) {
+    for (var i = 0; i < line.length-1; i++) {
       list = list + ` ${i+1}. ${line[i]},`
     }
+    list = list + ` ${i+1}. ${line[i]}`
     return list;
   }
   else {
